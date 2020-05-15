@@ -11,17 +11,13 @@ class home_page(object):
     def __init__(self,driver):
         self.home_page = Home_page(driver)
 
-    def click_button(self,click_button,title_name):
+    # check home page three button
+    def check_button(self,click_button,title_name):
         """
-        click_button:brand_story
-                     sharing_rule
-                     business_academy
-                     sleep_channel
-                     product_world
-                     cant_test
-                     switch_class
-                     title_name
-        title_name:品牌故事，分享规则，商学院，享睡频道，产品世界，暂未开放（暂时无法点击，使用现有其他功能）, 类 型
+        click_button:about_zzmx
+                     zzmx_material
+                     QA_center
+        title_name:关于真珠，真珠素材，答疑中心
         """
         self.home_page.click_button(click_button)
         return self.check_title_name(title_name)
@@ -34,6 +30,34 @@ class home_page(object):
             print("True")
             return True
         else:
+            return False
+    
+    # check picture button
+    def check_click_product_button(self,element,text):
+        """
+        home page:three product in the picture
+        first element:first_picture
+        second element:second_picture
+        third element:third_picture
+        """
+        self.home_page.click_product_button(element)
+        return self.check_product_title(text)
+
+    def check_product_title(self,text):
+        if self.home_page.get_product_detail_page_title() == text:
+            return True
+        else: 
+            return False
+
+    # check tabber
+    def check_seller_tabber(self,title_name):
+        self.home_page.click_seller_tabber()
+        return self.check_tabber_title_name(title_name)
+
+    def check_tabber_title_name(self,title_name):
+        if self.home_page.get_seller_page_title() == title_name:
+            return True
+        else: 
             return False
 
 if __name__ == "__main__":

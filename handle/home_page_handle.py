@@ -11,43 +11,12 @@ class Home_page(object):
         self.file_path = os.path.join(os.getcwd()+"/config/"+"home_page_element.ini")
         self.home_page = FindElement(self.driver,file_path=self.file_path,node="home_page")
 
+    # into three button
     def click_button(self,button):
-        if button == "brand_story":
-            self.click_brand_story()
-        elif button == "sharing_rule":
-            self.click_sharing_rule()
-        elif button == "business_academy":
-            self.click_business_academy()
-        elif button == "sleep_channel":
-            self.click_sleep_channel()
-        elif button == "product_world":
-            self.click_product_world()
-        elif button == "cant_test":
-            self.click_cant_test()
-        elif button == "switch_class":
-            self.click_switch_class()
+        self.home_page.get_element(button).click()
+        return self.get_title_name()
 
-    def click_brand_story(self):
-        self.home_page.get_element("brand_story").click()
-
-    def click_sharing_rule(self):
-        self.home_page.get_element("sharing_rule").click()
-
-    def click_business_academy(self):
-        self.home_page.get_element("business_academy").click()
-
-    def click_sleep_channel(self):
-        self.home_page.get_element("sleep_channel").click()
-
-    def click_product_world(self):
-        self.home_page.get_element("product_world").click()
-
-    def click_cant_test(self):
-        self.home_page.get_element("cant_test").click()
-
-    def click_switch_class(self):
-        self.home_page.get_element("switch_class").click()
-
+    # return title name
     def get_title_name(self):
         try:
             time.sleep(2)
@@ -57,13 +26,55 @@ class Home_page(object):
         except:
             return None
 
+    # into product detail
+    def click_product_button(self,element):
+        T = True
+        while T:
+            try:
+                self.home_page.get_element(element).click()
+                T = False
+                return self.get_product_detail_page_title()
+            except:
+                self.home_page.scroll_get_element(element)
+
+
+    # get product product detail page title
+    def get_product_detail_page_title(self):
+        try: 
+            time.sleep(2)
+            text = self.home_page.get_element("product_detail_text").text
+            return text
+        except:
+            return None
+
+    def click_seller_tabber(self):
+        self.home_page.get_element("seller_tabber").click()
+        return self.get_seller_page_title()
+        
+    def get_seller_page_title(self):
+        try: 
+            time.sleep(2)
+            text = self.home_page.get_element("seller_header").text
+            return text
+        except:
+            return None
 
 if __name__ == "__main__":
     driver = webdriver.Chrome()
-    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/article?aId=11")
-    a = Home_page(driver)
-    # time.sleep(2)
-    a.get_title_name()
+    driver.get("http://fanrongdemo.qianyansoft.com/Wap/#/")
+    time.sleep(2)
+    # driver.find_element_by_class_name("first").click()
+    js = "document.documentElement.scrollTop=500;"
+    t = True
+    while t:
+        try:
+            driver.find_element_by_class_name("first").click()
+            t=False
+        except:
+            driver.execute_script(js)
+    # a = Home_page(driver)
+    # # time.sleep(2)
+    # a.get_title_name()
 
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By

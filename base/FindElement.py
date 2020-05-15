@@ -34,11 +34,16 @@ class FindElement(object):
         except:
             return None
 
+    def scroll_get_element(self,value):
+        js = "document.documentElement.scrollTop=300;"
+        self.get_element(value)
+        self.driver.execute_script(js)
+
 if __name__ == "__main__":
     driver = webdriver.Chrome()
-    driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/login")
-    element_a = FindElement(driver)
-    print(element_a.get_element("login_button").text)
+    driver.get("http://fanrongdemo.qianyansoft.com/Wap/#/")
+    element_a = FindElement(driver,node="home_page")
+    element_a.get_element("first_picture").click()
 
 
 
