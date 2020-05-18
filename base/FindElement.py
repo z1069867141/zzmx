@@ -39,6 +39,8 @@ class FindElement(object):
             elif by == "tag_name":
                 element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, value)))
                 return element
+            elif by == "other":
+                return value
         except:
             return None
 
@@ -51,12 +53,14 @@ if __name__ == "__main__":
     from selenium import webdriver
     import time
     driver = webdriver.Chrome()
-    driver.get("http://fanrongdemo.qianyansoft.com/Wap/#/seller")
+    driver.get("http://fanrongdemo.qianyansoft.com/Wap/#/detail?112?undefined")
     # element_a = FindElement(driver,file_path=".\\config\\shop_product.ini",node="not_logged_in_shop_list")
     # element_a.get_element("share_button").click()
     time.sleep(5)
-    driver.find_element_by_xpath("//div[@id='share']").click()
-
+    a = driver.find_element_by_xpath("//input[@placeholder='1']")
+    time.sleep(2)
+    b = a.get_attribute("placeholder")
+    print(b)
 # if __name__ == "__main__":
 #     driver = webdriver.Chrome()
 #     driver.get("http://b2bsaas.qianyansoft.com/Sjh/#/article?aId=11")

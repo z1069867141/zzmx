@@ -34,3 +34,9 @@
 2020-05-18 15:25:26,350 shop_not_login_page.py---> test_click_search_button 20 INFO this is test_click_search_button
 2020-05-18 15:25:31,441 shop_not_login_page.py---> test_click_share_button 20 INFO this is test_lick_share_button
 2020-05-18 15:25:38,462 shop_not_login_page.py---> test_switch_tabber_shopping_bag 20 INFO this is test_switch_tabber_shopping_bag
+2020-05-18 23:54:32,118 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
+2020-05-18 23:56:01,870 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
+2020-05-18 23:57:12,743 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
+2020-05-18 23:57:43,339 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
+2020-05-18 23:59:03,309 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
+2020-05-18 23:59:37,875 product_detail_page.py---> test_click_return_button 20 INFO this is test_click_return_button
