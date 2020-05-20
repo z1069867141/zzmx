@@ -1,0 +1,8 @@
+2020-05-20 23:47:52,505 product_detail_page.py---> test_click_buy_button 20 INFO this is test_click_buy_button
+2020-05-20 23:50:59,103 product_detail_page.py---> test_click_buy_confirm_button 20 INFO this is test_click_buy_confirm_button
+2020-05-20 23:55:26,973 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
+2020-05-20 23:56:00,570 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
+2020-05-20 23:56:56,799 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
+2020-05-20 23:58:03,451 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
+2020-05-20 23:59:01,421 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
+2020-05-20 23:59:16,007 product_detail_page.py---> test_click_plus_product_button 20 INFO this is test_click_plus_product_button
